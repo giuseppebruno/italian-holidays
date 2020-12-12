@@ -31,6 +31,10 @@ print(is_holiday) # True
 day = datetime(2031, 4, 14)
 is_holiday = holidays.is_holiday(day)
 print(is_holiday) # True
+
+# Getting holiday's name (return None if date is not an italian holiday)
+holiday_name = holidays.holiday_name("2020-11-01")
+print(holiday_name) # All Saints' Day
 ```
 
 ## Licence

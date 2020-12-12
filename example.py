@@ -12,7 +12,6 @@ day = datetime(2031, 4, 14)
 is_holiday = holidays.is_holiday(day)
 print(is_holiday)
 
-
 # Getting holiday's name (return None if date is not an italian holiday)
-holiday_name = holidays.holiday_name("2024-06-02")
-print(holiday_name) # Republic Day
+holiday_name = holidays.holiday_name("2020-11-01")
+print(holiday_name) # All Saints' Day
