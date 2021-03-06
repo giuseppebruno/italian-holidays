@@ -48,32 +48,32 @@ class italian_holidays():
 			date_obj = datetime.strptime(date, "%Y-%m-%d")
 		if date_obj is None:
 			return "date must be in the format 'Y-m-d'"
-		holiday_name = None
+		name = None
 		if date_obj.month == 1 and date_obj.day == 1:
-			holiday_name = 'New Year\'s Day'
+			name = 'New Year\'s Day'
 		if date_obj.month == 1 and date_obj.day == 6:
-			return 'Epiphany'
+			name = 'Epiphany'
 		if date_obj.month == self._easter(date_obj).month and date_obj.day == self._easter(date_obj).day:
-			return 'Easter Sunday'
+			name = 'Easter Sunday'
 		if date_obj.month == self._easter_monday(date_obj).month and date_obj.day == self._easter_monday(date_obj).day:
-			return 'Easter Monday'
+			name = 'Easter Monday'
 		if date_obj.month == 4 and date_obj.day == 25:
-			return 'Liberation Day'
+			name = 'Liberation Day'
 		if date_obj.month == 5 and date_obj.day == 1:
-			return 'Labor Day / May Day'
+			name = 'Labor Day / May Day'
 		if date_obj.month == 6 and date_obj.day == 2:
-			return 'Republic Day'
+			name = 'Republic Day'
 		if date_obj.month == 8 and date_obj.day == 15:
-			return 'Ferragosto'
+			name = 'Ferragosto'
 		if date_obj.month == 11 and date_obj.day == 1:
-			return 'All Saints\' Day'
+			name = 'All Saints\' Day'
 		if date_obj.month == 12 and date_obj.day == 8:
-			return 'Feast of the Immaculate Conception'
+			name = 'Feast of the Immaculate Conception'
 		if date_obj.month == 12 and date_obj.day == 25:
-			return 'Christmas Day'
+			name = 'Christmas Day'
 		if date_obj.month == 12 and date_obj.day == 26:
-			return 'St. Stephen\'s Day'
-		return holiday_name
+			name = 'St. Stephen\'s Day'
+		return name
 
 	def _easter(self, date):
 		''' 

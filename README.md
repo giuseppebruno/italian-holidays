@@ -5,6 +5,7 @@ A simple Python helper class to determine Italian holidays. Easter holidays' cal
 [![PyPI status](https://img.shields.io/pypi/status/italian-holidays.svg)](https://pypi.python.org/pypi/italian-holidays/)
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/italian-holidays.svg)](https://pypi.python.org/pypi/italian-holidays/)
 [![PyPI version shields.io](https://img.shields.io/pypi/v/italian-holidays.svg)](https://pypi.python.org/pypi/italian-holidays/)
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/italian-holidays)](https://pypi.python.org/pypi/italian-holidays/)
 [![GitHub license](https://img.shields.io/github/license/giuseppebruno/italian-holidays.svg)](https://github.com/giuseppebruno/italian-holidays/blob/master/LICENSE)
 
 ## Install
