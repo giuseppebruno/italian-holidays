@@ -5,10 +5,10 @@ with open('README.md', 'r', encoding='utf-8') as fh:
 
 setuptools.setup(
     name='italian-holidays',
-    version='0.0.3',
+    version='0.0.4',
     author='Giuseppe Bruno',
     author_email='info@gbrunodev.it',
-    description='A simple Python helper class to determine Italian holidays.',
+    description='A simple Python helper class to determine Italian holidays with the possibility to set custom holidays.',
     long_description=long_description,
     long_description_content_type='text/markdown',
     url='https://github.com/giuseppebruno/italian-holidays',

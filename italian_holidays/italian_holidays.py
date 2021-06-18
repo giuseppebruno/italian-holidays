@@ -1,19 +1,21 @@
 #!/bin/python
 from datetime import datetime, timedelta
+import sys
 
 class italian_holidays():
 
-	def __init__(self):
-		pass
+	def __init__(self, custom_holidays = []):
+		self._custom_holidays = custom_holidays
 
 	def is_holiday(self, date):
+
 		if isinstance(date, str) == False and isinstance(date, datetime) == False:
-			return "is_holiday can accept only string or datetime object"
+			return sys.exit('is_holiday can accept only string or datetime object')
 		date_obj = date
 		if isinstance(date, str):
-			date_obj = datetime.strptime(date, "%Y-%m-%d")
+			date_obj = datetime.strptime(date, '%Y-%m-%d')
 		if date_obj is None:
-			return "date must be in the format 'Y-m-d'"
+			return sys.exit('date must be in the format \'Y-m-d\'')
 		if date_obj.month == 1 and date_obj.day == 1:
 			return True
 		if date_obj.month == 1 and date_obj.day == 6:
@@ -38,16 +40,25 @@ class italian_holidays():
 			return True
 		if date_obj.month == 12 and date_obj.day == 26:
 			return True
+		if len(self._custom_holidays) > 0:
+			for custom_holiday in self._custom_holidays:
+				if isinstance(custom_holiday, str) == False and isinstance(custom_holiday, datetime) == False:
+					return sys.exit('custom holidays can accept only array of string or datetime object')
+				custom_date_obj = custom_holiday
+				if isinstance(custom_holiday, str):
+					custom_date_obj = datetime.strptime(custom_holiday, '%m-%d')
+				if date_obj.month == custom_date_obj.month and date_obj.day == custom_date_obj.day:
+					return True
 		return False
 
 	def holiday_name(self, date):
 		if isinstance(date, str) == False and isinstance(date, datetime) == False:
-			return "is_holiday can accept only string or datetime object"
+			return sys.exit('holiday_name can accept only string or datetime object')
 		date_obj = date
 		if isinstance(date, str):
-			date_obj = datetime.strptime(date, "%Y-%m-%d")
+			date_obj = datetime.strptime(date, '%Y-%m-%d')
 		if date_obj is None:
-			return "date must be in the format 'Y-m-d'"
+			return sys.exit('date must be in the format \'Y-m-d\'')
 		name = None
 		if date_obj.month == 1 and date_obj.day == 1:
 			name = 'New Year\'s Day'
@@ -73,6 +84,15 @@ class italian_holidays():
 			name = 'Christmas Day'
 		if date_obj.month == 12 and date_obj.day == 26:
 			name = 'St. Stephen\'s Day'
+		if len(self._custom_holidays) > 0:
+			for custom_holiday in self._custom_holidays:
+				if isinstance(custom_holiday, str) == False and isinstance(custom_holiday, datetime) == False:
+					return sys.exit('custom holidays can accept only array of string or datetime object')
+				custom_date_obj = custom_holiday
+				if isinstance(custom_holiday, str):
+					custom_date_obj = datetime.strptime(custom_holiday, '%m-%d')
+				if date_obj.month == custom_date_obj.month and date_obj.day == custom_date_obj.day:
+					return 'Custom holiday'
 		return name
 
 	def _easter(self, date):
@@ -82,7 +102,7 @@ class italian_holidays():
 		***********************
 		'''
 		gold_numbers = {1: 45, 2: 34, 3: 23, 4: 42, 5: 31, 6: 49, 7: 39, 8: 28, 9: 47, 10: 36, 11: 25, 12: 44, 13: 33, 14: 22, 15: 41, 16: 30, 17: 48, 18: 38, 19: 27}
-		year = int(date.strftime("%Y"))
+		year = int(date.strftime('%Y'))
 		modulo = (year + 1) % 19
 		gold_number = gold_numbers[modulo]
 		if gold_number <= 31:
