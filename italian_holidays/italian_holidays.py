@@ -101,7 +101,8 @@ class italian_holidays():
 		WORKS FROM 1900 TO 2199
 		***********************
 		'''
-		gold_numbers = {1: 45, 2: 34, 3: 23, 4: 42, 5: 31, 6: 49, 7: 39, 8: 28, 9: 47, 10: 36, 11: 25, 12: 44, 13: 33, 14: 22, 15: 41, 16: 30, 17: 48, 18: 38, 19: 27}
+		gold_numbers = {0: 19, 1: 45, 2: 34, 3: 23, 4: 42, 5: 31, 6: 49, 7: 39, 8: 28, 9: 47, 10: 36, 11: 25, 12: 44, 13: 33, 14: 22, 15: 41, 16: 30, 17: 48, 18: 38, 19: 27}
+		cycle_19_year = 1918
 		year = int(date.strftime('%Y'))
 		modulo = (year + 1) % 19
 		gold_number = gold_numbers[modulo]
@@ -114,6 +115,8 @@ class italian_holidays():
 				easter_date = full_moon
 				while easter_date.weekday() != 6:
 					easter_date = easter_date + timedelta(days= 1)
+			if (easter_date.year - cycle_19_year) % 19 == 0:
+				easter_date = easter_date + timedelta(days=7)
 			return easter_date
 		else:
 			day = gold_number - 31
