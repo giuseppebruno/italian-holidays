@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "italian-holidays"
+version = "0.0.5"
+description = "A simple Python helper class to determine Italian holidays with the possibility to set custom holidays."
+readme = "README.md"
+requires-python = ">=3"
+license = {text = "MIT License"}
+authors = [
+    {name = "Giuseppe Bruno", email = "info@gbrunodev.it"}
+]
+keywords = ["italian", "holidays"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.5",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+]
+
+[project.urls]
+Homepage = "https://github.com/giuseppebruno/italian-holidays"
