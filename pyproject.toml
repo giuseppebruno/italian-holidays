@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "italian-holidays"
-version = "0.0.5"
+version = "0.0.6"
 description = "A simple Python helper class to determine Italian holidays with the possibility to set custom holidays."
 readme = "README.md"
 requires-python = ">=3"
