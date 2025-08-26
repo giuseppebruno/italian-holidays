@@ -5,7 +5,7 @@ with open('README.md', 'r', encoding='utf-8') as fh:
 
 setuptools.setup(
     name='italian-holidays',
-    version='0.0.6',
+    version='0.0.7',
     author='Giuseppe Bruno',
     author_email='info@gbrunodev.it',
     description='A simple Python helper class to determine Italian holidays with the possibility to set custom holidays.',
@@ -25,6 +25,7 @@ setuptools.setup(
         'Programming Language :: Python :: 3.10',
         'Programming Language :: Python :: 3.11',
         'Programming Language :: Python :: 3.12',
+        'Programming Language :: Python :: 3.13',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
     ],

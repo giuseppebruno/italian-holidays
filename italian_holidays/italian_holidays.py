@@ -50,7 +50,7 @@ class italian_holidays():
 			if (date_obj.month, date_obj.day) == (custom_date_obj.month, custom_date_obj.day):
 				return True
 			
-			return False
+		return False
 
 	def holiday_name(self, date):
 
